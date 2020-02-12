@@ -1,7 +1,6 @@
-# React Calculator
+# Bookstore CMS
 
-
-A calculator build with react. For learning purpose.    
+A bookstore project for using react-redux.  
 
 ## Built With
 
@@ -10,6 +9,8 @@ A calculator build with react. For learning purpose.
 - CSS
 - HTML5
 - Npm
+- Redux
+- react-redux
 
 ## Live Demo
 

@@ -4,7 +4,7 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 import App from './components/App';
-import BookReducer from './reducers/book';
+import rootReducer from './reducers/index';
 
 const initialState = [
   {
@@ -33,7 +33,25 @@ const mapStateToProps = state => ({
   books: state,
 });
 
-const store = createStore(BookReducer, initialState);
+const store = createStore(rootReducer);
+
+store.dispatch({
+  type: 'CREATE_BOOK',
+  book: initialState[0],
+});
+store.dispatch({
+  type: 'CREATE_BOOK',
+  book: initialState[1],
+});
+store.dispatch({
+  type: 'CREATE_BOOK',
+  book: initialState[2],
+});
+store.dispatch({
+  type: 'CREATE_BOOK',
+  book: initialState[3],
+});
+
 const Container = connect(mapStateToProps, null)(App);
 
 const AppWrapper = () => (

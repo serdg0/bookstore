@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 import App from './components/App';
 import rootReducer from './reducers/index';
+import { createBookAction } from './actions/index';
 
 const initialState = [
   {
@@ -52,7 +53,7 @@ store.dispatch({
   book: initialState[3],
 });
 
-const Container = connect(mapStateToProps, null)(App);
+const Container = connect(mapStateToProps, { createBookAction })(App);
 
 const AppWrapper = () => (
   <Provider store={store}>

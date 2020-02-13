@@ -6,11 +6,11 @@ import '../App.css';
 
 
 const App = props => {
-  const { books: { books } } = props;
+  const { books: { books }, createBookAction } = props;
   return (
     <div>
       <BooksList books={books} />
-      <BooksForm />
+      <BooksForm books={books} submitBook={createBookAction} />
     </div>
   );
 };

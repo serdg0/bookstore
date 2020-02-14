@@ -31,10 +31,11 @@ class BooksForm extends React.Component {
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const categoriesBox = categories.map(cg => <option key={cg}>{cg}</option>);
+    const { title, category } = this.state;
     return (
       <form>
-        <input name="title" onChange={this.handleChange} type="text" />
-        <select name="category" onChange={this.handleChange}>{categoriesBox}</select>
+        <input value={title} name="title" onChange={this.handleChange} type="text" />
+        <select value={category} name="category" onChange={this.handleChange}>{categoriesBox}</select>
         <button onClick={() => this.handleSubmit(this.state)} type="button">Submit</button>
       </form>
     );

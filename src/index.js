@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider, connect } from 'react-redux';
 import App from './components/App';
 import rootReducer from './reducers/index';
-import { createBookAction } from './actions/index';
+import { createBookAction, removeBookAction } from './actions/index';
+import logger from 'redux-logger';
 
 const initialState = [
   {
@@ -31,10 +32,10 @@ const initialState = [
 ];
 
 const mapStateToProps = state => ({
-  books: state,
+  books: state.books,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 store.dispatch({
   type: 'CREATE_BOOK',
@@ -53,7 +54,7 @@ store.dispatch({
   book: initialState[3],
 });
 
-const Container = connect(mapStateToProps, { createBookAction })(App);
+const Container = connect(mapStateToProps, { createBookAction, removeBookAction })(App);
 
 const AppWrapper = () => (
   <Provider store={store}>

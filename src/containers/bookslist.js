@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Book from '../components/book';
 
 const Bookslist = props => {
-  const { books } = props;
-  const list = books.map(book => <Book key={book.title} book={book} />);
+  const { books, removeBook } = props;
+  console.log(props)
+  const list = books.map(book => <Book key={book.title} book={book} removeBook={removeBook} />);
   return (
     <table>
       <tr>
@@ -18,7 +19,7 @@ const Bookslist = props => {
 };
 
 Bookslist.propTypes = {
-  books: PropTypes.instanceOf(Array).isRequired,
+  books: PropTypes.array.isRequired,
 };
 
 export default Bookslist;

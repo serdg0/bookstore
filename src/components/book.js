@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = props => {
-  const { book } = props;
-  const button = <button>Remove</button>;
+  const { book, removeBook } = props;
+  const button = <button onClick={() => removeBook(book)}>Remove</button>;
   return (
     <tr>
       <th>{book.id()}</th>

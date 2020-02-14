@@ -21,9 +21,9 @@ class BooksForm extends React.Component {
     })
   }
 
-  handleSubmit() {
-    this.props.createBookAction(this.state);
-    //this.setState(initialState);
+  handleSubmit(state) {
+    this.props.createBookAction(state);
+    this.setState(initialState);
   }
 
   render(){
@@ -33,7 +33,7 @@ class BooksForm extends React.Component {
       <form>
         <input name="title" onChange={this.handleChange} type="text" />
         <select name="category" onChange={this.handleChange}>{categoriesBox}</select>
-        <button onClick={this.handleSubmit} type="submit">Submit</button>
+        <button onClick={() => this.handleSubmit(this.state)} type="button">Submit</button>
       </form>
     );
   }

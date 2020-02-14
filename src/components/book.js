@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 const Book = props => {
   const { book } = props;
-  const button = <button>Remove</button>
-  console.log('newbbok: ', book)
+  const button = <button>Remove</button>;
   return (
     <tr>
       <th>{book.id()}</th>

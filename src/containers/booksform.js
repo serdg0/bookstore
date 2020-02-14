@@ -1,13 +1,15 @@
 import React from 'react';
 
+const initialState = {
+  title: '',
+  category: 'Action',
+  id: () => (Math.random() * 100).toFixed(),
+}
+
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: '',
-      category: '',
-      id: () => (Math.random() * 100).toFixed(),
-    }
+    this.state = initialState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,11 +19,11 @@ class BooksForm extends React.Component {
     this.setState({
       [name]: value
     })
-    console.log(this.state)
   }
 
   handleSubmit() {
-    this.props.submitBook(this.state);
+    this.props.createBookAction(this.state);
+    //this.setState(initialState);
   }
 
   render(){

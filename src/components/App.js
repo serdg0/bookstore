@@ -10,7 +10,7 @@ const App = props => {
   return (
     <div>
       <BooksList books={books} />
-      <BooksForm books={books} submitBook={createBookAction} />
+      <BooksForm books={books} createBookAction={createBookAction} />
     </div>
   );
 };

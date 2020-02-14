@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Book = props => {
   const { book, removeBook } = props;
-  const button = <button onClick={() => removeBook(book)}>Remove</button>;
+  const button = <button type="button" onClick={() => removeBook(book)}>Remove</button>;
   return (
     <tr>
       <th>{book.id()}</th>
@@ -16,6 +16,7 @@ const Book = props => {
 
 Book.propTypes = {
   book: PropTypes.instanceOf(Array).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default Book;

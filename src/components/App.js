@@ -17,6 +17,8 @@ const App = props => {
 
 App.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
+  createBookAction: PropTypes.func.isRequired,
+  removeBookAction: PropTypes.func.isRequired,
 };
 
 export default App;

@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider, connect } from 'react-redux';
+import logger from 'redux-logger';
 import App from './components/App';
 import rootReducer from './reducers/index';
 import { createBookAction, removeBookAction } from './actions/index';
-import logger from 'redux-logger';
 
 const initialState = [
   {

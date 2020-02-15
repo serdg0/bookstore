@@ -6,17 +6,19 @@ import '../App.css';
 
 
 const App = props => {
-  const { books: { books } } = props;
+  const { books, createBookAction, removeBookAction } = props;
   return (
     <div>
-      <BooksList books={books} />
-      <BooksForm />
+      <BooksList books={books} removeBook={removeBookAction} />
+      <BooksForm createBookAction={createBookAction} />
     </div>
   );
 };
 
 App.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
+  createBookAction: PropTypes.func.isRequired,
+  removeBookAction: PropTypes.func.isRequired,
 };
 
 export default App;

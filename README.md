@@ -21,9 +21,6 @@ A bookstore project for using react-redux.
 
 This project will be deployed to Heroku.
 
-### Prerequisites
-- Node
-
 ## 👤 **Author: Sergio Diaz**
 
 - Github: [@github](https://github.com/serdg0)

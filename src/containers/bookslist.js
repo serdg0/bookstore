@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Book from '../components/book';
 
 const Bookslist = props => {
-  const { books, removeBook } = props;
-  const list = books.map(book => <Book key={book.title} book={book} removeBook={removeBook} />);
+  const { books, removeBook, filter } = props;
+  const filtered = filter === 'All' ? books : books.filter(book => book.category === filter);
+  const list = filtered.map(book => <Book key={book.title} book={book} removeBook={removeBook} />);
+
   return (
     <table>
       <tr>
@@ -20,6 +22,7 @@ const Bookslist = props => {
 Bookslist.propTypes = {
   books: PropTypes.arrayOf(PropTypes.oneOfType([])).isRequired,
   removeBook: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 export default Bookslist;

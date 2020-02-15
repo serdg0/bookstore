@@ -6,7 +6,7 @@ import { Provider, connect } from 'react-redux';
 import logger from 'redux-logger';
 import App from './components/App';
 import rootReducer from './reducers/index';
-import { createBookAction, removeBookAction } from './actions/index';
+import { createBookAction, removeBookAction, changeFilterAction } from './actions/index';
 
 const initialState = [
   {
@@ -33,6 +33,7 @@ const initialState = [
 
 const mapStateToProps = state => ({
   books: state.books,
+  filter: state.filter,
 });
 
 const store = createStore(rootReducer, applyMiddleware(logger));
@@ -54,7 +55,11 @@ store.dispatch({
   book: initialState[3],
 });
 
-const Container = connect(mapStateToProps, { createBookAction, removeBookAction })(App);
+const Container = connect(mapStateToProps, {
+  createBookAction,
+  removeBookAction,
+  changeFilterAction,
+})(App);
 
 const AppWrapper = () => (
   <Provider store={store}>

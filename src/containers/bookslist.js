@@ -29,11 +29,6 @@ class Bookslist extends React.Component {
       <div>
         <CategoryFilter handleChange={this.handleChange} />
         <table>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
           {list}
         </table>
       </div>

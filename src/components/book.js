@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { panelStyle, bookTitle, categoryStyle, removeButton } from '../style';
 
 const Book = props => {
   const { book, removeBook } = props;
-  const button = <button type="button" onClick={() => removeBook(book)}>Remove</button>;
+  const button = <button style={removeButton} type="button" onClick={() => removeBook(book)}>Remove</button>;
   return (
-    <tr>
-      <th>{book.id()}</th>
-      <th>{book.title}</th>
-      <th>{book.category}</th>
-      <th>{button}</th>
-    </tr>
+    <div style={panelStyle}> 
+      <div style={categoryStyle}>{book.category}</div>
+      <div style={bookTitle}>{book.title}</div>
+      <div>{button}</div>
+    </div>
   );
 };
 

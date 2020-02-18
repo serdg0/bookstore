@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { addBookSt, inputForm, selectForm, addBkBtn } from '../style';
 
 const initialState = {
   title: '',
@@ -34,9 +35,10 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
     return (
       <form>
-        <input value={title} name="title" onChange={this.handleChange} type="text" />
-        <select value={category} name="category" onChange={this.handleChange}>{categoriesBox}</select>
-        <button onClick={() => this.handleSubmit(this.state)} type="button">Submit</button>
+        <h1 style={addBookSt}>ADD NEW BOOK</h1>
+        <input style={inputForm} value={title} name="title" onChange={this.handleChange} type="text" />
+        <select style={selectForm}value={category} name="category" onChange={this.handleChange}>{categoriesBox}</select>
+        <button style={addBkBtn} onClick={() => this.handleSubmit(this.state)} type="button">Submit</button>
       </form>
     );
   }

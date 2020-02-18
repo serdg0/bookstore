@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BooksList from '../containers/bookslist';
 import BooksForm from '../containers/booksform';
-import CategoryFilter from '../containers/filter';
 import '../App.css';
 
 
@@ -12,8 +11,12 @@ const App = props => {
   } = props;
   return (
     <div>
-      <CategoryFilter filter={changeFilterAction} />
-      <BooksList books={books} filter={filter} removeBook={removeBookAction} />
+      <BooksList
+        books={books}
+        filter={filter}
+        filterFun={changeFilterAction}
+        removeBook={removeBookAction}
+      />
       <BooksForm createBookAction={createBookAction} />
     </div>
   );

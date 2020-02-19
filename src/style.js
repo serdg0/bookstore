@@ -116,7 +116,20 @@ const removeButton = {
     letterSpacing: '0.5px',
     textAlign: 'center',
     color: '#ffffff',
+    background: 'inherit',
+    border: 'none',
 }
+
+const blueRectangle = {
+    width: '184px',
+    height: '45px',
+    borderRadius: '3px',
+    backgroundColor: '#0290ff',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'center',
+  }
 
 
 export { panelStyle, 
@@ -128,4 +141,5 @@ export { panelStyle,
     inputForm, 
     selectForm,
     addBkBtn,
+    blueRectangle,
 };

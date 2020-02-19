@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addBookSt, inputForm, selectForm, addBkBtn, blueRectangle } from '../style';
+import {
+  addBookSt, inputForm, selectForm, addBkBtn, blueRectangle, flexForm,
+} from '../style';
 
 const initialState = {
   title: '',
@@ -32,14 +34,19 @@ class BooksForm extends React.Component {
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const categoriesBox = categories.map(cg => <option key={cg}>{cg}</option>);
-    const { title, category } = this.state;
+    const { title } = this.state;
     return (
       <form>
         <h1 style={addBookSt}>ADD NEW BOOK</h1>
-        <input style={inputForm} value={title} name="title" onChange={this.handleChange} type="text" />
-        <select style={selectForm}value={category} name="category" onChange={this.handleChange}>{categoriesBox}</select>
-        <div style={blueRectangle}>
-          <button style={addBkBtn} onClick={() => this.handleSubmit(this.state)} type="button">Submit</button>
+        <div style={flexForm}>
+          <input placeholder="BOOK TITLE" style={inputForm} value={title} name="title" onChange={this.handleChange} type="text" />
+          <select style={selectForm} name="category" onChange={this.handleChange}>
+            <option value="" disabled selected>CATEGORY</option>
+            {categoriesBox}
+          </select>
+          <div style={blueRectangle}>
+            <button style={addBkBtn} onClick={() => this.handleSubmit(this.state)} type="button">ADD BOOK</button>
+          </div>
         </div>
       </form>
     );

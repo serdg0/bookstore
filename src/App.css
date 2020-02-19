@@ -5,3 +5,26 @@ body {
   flex-direction: center;
   background-color: #f5f6fa;
 }
+ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 95px;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+}
+
+li {
+  display: inline;
+  margin-right: 30px;
+}
+
+form {
+
+}
+
+.book:hover {
+  border: 2px solid gray !important;
+}

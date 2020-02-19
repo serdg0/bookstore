@@ -8,6 +8,7 @@ const CategoryFilter = props => {
   const { handleChange } = props;
   return (
     <select onChange={handleChange} style={selectStyle}>
+      <option value="" disabled selected>CATEGORIES</option>
       {categoriesBox}
     </select>
   );

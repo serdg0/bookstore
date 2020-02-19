@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from '../components/book';
 import CategoryFilter from './filter';
+import { bookstoreCms, booksCms } from '../style';
 
 class Bookslist extends React.Component {
   constructor(props) {
@@ -27,7 +28,11 @@ class Bookslist extends React.Component {
     ));
     return (
       <div>
-        <CategoryFilter handleChange={this.handleChange} />
+        <ul>
+          <li style={bookstoreCms}>Bookstore CMS</li>
+          <li style={booksCms}>BOOKS</li>
+          <li><CategoryFilter handleChange={this.handleChange} /></li>
+        </ul>
         <table>
           {list}
         </table>

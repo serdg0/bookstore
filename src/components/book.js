@@ -8,7 +8,7 @@ const Book = props => {
   const { book, removeBook } = props;
   const button = <button style={removeButton} type="button" onClick={() => removeBook(book)}>Remove</button>;
   return (
-    <div className="book" style={panelStyle}>
+    <div className="book col" style={panelStyle}>
       <div style={categoryStyle}>{book.category}</div>
       <div style={bookTitle}>{book.title}</div>
       <div>{button}</div>

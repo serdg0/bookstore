@@ -19,7 +19,7 @@ class BooksForm extends React.Component {
   }
 
   handleChange(event) {
-    const { target: { value }, target: { name } } = event;
+    const { target: { value, name } } = event;
     this.setState({
       [name]: value,
     });
@@ -27,9 +27,11 @@ class BooksForm extends React.Component {
 
   handleSubmit(state) {
     const { createBookAction } = this.props;
+    const { title } = this.state;
+    if (title === '') { return false };
     createBookAction(state);
     this.setState(initialState);
-  }
+  };
 
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];

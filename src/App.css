@@ -1,8 +1,4 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: center;
   background-color: #f5f6fa;
 }
 ul {
@@ -21,10 +17,14 @@ li {
   margin-right: 30px;
 }
 
-form {
-
-}
-
 .book:hover {
   border: 2px solid gray !important;
+}
+
+.nav {
+  width: 100%;
+}
+
+.container {
+  max-width: 100% !important;
 }

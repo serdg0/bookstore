@@ -1,5 +1,4 @@
 const panelStyle = {
-  width: '1200px',
   height: '170px',
   borderRadius: '4px',
   border: 'solid 2px #e8e8e8',
@@ -36,7 +35,6 @@ const selectStyle = {
 };
 
 const bookTitle = {
-  width: '197px',
   height: '29px',
   fontSize: '22px',
   fontWeight: 'bold',

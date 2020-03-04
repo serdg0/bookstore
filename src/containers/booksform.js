@@ -28,10 +28,10 @@ class BooksForm extends React.Component {
   handleSubmit(state) {
     const { createBookAction } = this.props;
     const { title } = this.state;
-    if (title === '') { return false };
+    if (title === '') { return false; }
     createBookAction(state);
-    this.setState(initialState);
-  };
+    return this.setState(initialState);
+  }
 
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];

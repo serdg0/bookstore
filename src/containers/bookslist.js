@@ -21,18 +21,16 @@ class Bookslist extends React.Component {
     const filtered = filter === 'All' ? books : books.filter(book => book.category === filter);
     const list = filtered.map(book => (
       <div key={book.title} className="row">
-        <div className="col-1 px-0" />
         <Book
           book={book}
           removeBook={removeBook}
         />
-        <div className="col-1 px-0" />
       </div>
     ));
     return (
-      <div className="container px-0">
+      <div className="container">
         <div className="row">
-          <ul className="col">
+          <ul className="col px-5">
             <li style={bookstoreCms}>Bookstore CMS</li>
             <li style={booksCms}>BOOKS</li>
             <li><CategoryFilter handleChange={this.handleChange} /></li>

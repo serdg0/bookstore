@@ -38,19 +38,23 @@ class BooksForm extends React.Component {
     const categoriesBox = categories.map(cg => <option key={cg}>{cg}</option>);
     const { title } = this.state;
     return (
-      <form>
-        <h1 style={addBookSt}>ADD NEW BOOK</h1>
-        <div style={flexForm}>
-          <input placeholder="BOOK TITLE" style={inputForm} value={title} name="title" onChange={this.handleChange} type="text" />
-          <select style={selectForm} name="category" onChange={this.handleChange}>
-            <option value="" disabled selected>CATEGORY</option>
-            {categoriesBox}
-          </select>
-          <div style={blueRectangle}>
-            <button style={addBkBtn} onClick={() => this.handleSubmit(this.state)} type="button">ADD BOOK</button>
-          </div>
+      <div className="container">
+        <div className="row">
+          <form className="col mx-5">
+            <h1 style={addBookSt}>ADD NEW BOOK</h1>
+            <div style={flexForm}>
+              <input placeholder="BOOK TITLE" style={inputForm} value={title} name="title" onChange={this.handleChange} type="text" />
+              <select style={selectForm} name="category" onChange={this.handleChange}>
+                <option value="" disabled selected>CATEGORY</option>
+                {categoriesBox}
+              </select>
+              <div style={blueRectangle}>
+                <button style={addBkBtn} onClick={() => this.handleSubmit(this.state)} type="button">ADD BOOK</button>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     );
   }
 }

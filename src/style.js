@@ -12,7 +12,7 @@ const panelStyle = {
 };
 
 const inputForm = {
-  width: '664px',
+  width: '75%',
   height: '45px',
   borderRadius: '4px',
   border: 'solid 1px #e8e8e8',
@@ -74,7 +74,7 @@ const removeButton = {
 };
 
 const selectForm = {
-  width: '285px',
+  width: '12.5%',
   height: '45px',
   borderRadius: '4px',
   border: 'solid 1px #e8e8e8',
@@ -111,7 +111,7 @@ const addBkBtn = {
 };
 
 const blueRectangle = {
-  width: '184px',
+  width: '12.5%',
   height: '45px',
   borderRadius: '3px',
   backgroundColor: '#0290ff',

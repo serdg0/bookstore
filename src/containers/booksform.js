@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  addBookSt, inputForm, selectForm, addBkBtn, blueRectangle, flexForm,
+} from '../style';
 
 const initialState = {
   title: '',
@@ -16,7 +19,7 @@ class BooksForm extends React.Component {
   }
 
   handleChange(event) {
-    const { target: { value }, target: { name } } = event;
+    const { target: { value, name } } = event;
     this.setState({
       [name]: value,
     });
@@ -24,20 +27,34 @@ class BooksForm extends React.Component {
 
   handleSubmit(state) {
     const { createBookAction } = this.props;
+    const { title } = this.state;
+    if (title === '') { return false; }
     createBookAction(state);
-    this.setState(initialState);
+    return this.setState(initialState);
   }
 
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const categoriesBox = categories.map(cg => <option key={cg}>{cg}</option>);
-    const { title, category } = this.state;
+    const { title } = this.state;
     return (
-      <form>
-        <input value={title} name="title" onChange={this.handleChange} type="text" />
-        <select value={category} name="category" onChange={this.handleChange}>{categoriesBox}</select>
-        <button onClick={() => this.handleSubmit(this.state)} type="button">Submit</button>
-      </form>
+      <div className="container">
+        <div className="row">
+          <form className="col mx-5">
+            <h1 style={addBookSt}>ADD NEW BOOK</h1>
+            <div style={flexForm}>
+              <input placeholder="BOOK TITLE" style={inputForm} value={title} name="title" onChange={this.handleChange} type="text" />
+              <select style={selectForm} name="category" onChange={this.handleChange}>
+                <option value="" disabled selected>CATEGORY</option>
+                {categoriesBox}
+              </select>
+              <div style={blueRectangle}>
+                <button style={addBkBtn} onClick={() => this.handleSubmit(this.state)} type="button">ADD BOOK</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     );
   }
 }

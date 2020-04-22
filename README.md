@@ -1,35 +1,33 @@
 # Bookstore CMS
 
-A bookstore project for using react-redux.  
+A book CMS. Add, or remove any book you own!
+
+![bookstore](https://user-images.githubusercontent.com/49207642/80014284-b206b900-8495-11ea-8c2e-1f283b123151.png)
+
+The purpose of this project is to dive deep into the redux architecture.
 
 ## Built With
 
-- Javascript
-- React
-- CSS
-- HTML5
-- Npm
+- CSS.
+- Javascript.
+- HTML.
+- ReactJS.
 - Redux
-- react-redux
 
 ## Live Demo
 
-[Live Demo Link](https://bookstore-reactredux.herokuapp.com/)
+[Live Demo Link](https://bookstore-react-reduxjs.netlify.app)
 
+## Author
 
-## Getting Started
+👤 Sergio Diaz
 
-This project will be deployed to Heroku.
+[Github](https://github.com/serdg0) | [Twitter](https://twitter.com/thesergiod) | [Linkedin](https://www.linkedin.com/in/sergiodiaz-dev/) | [Portfolio](https://sergiodev.netlify.com/)
 
-## 👤 **Author: Sergio Diaz**
-
-- Github: [@github](https://github.com/serdg0)
-- Twitter: [@twitter](https://twitter.com/sedzgzz)
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## 📝 License
 
